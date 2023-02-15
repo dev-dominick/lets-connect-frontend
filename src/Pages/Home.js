@@ -1,25 +1,18 @@
 import React from 'react'
+import '../styles/home.css'
+import HomeFriendsList from '../components/HomeFriendsList'
+
 
 function Home() {
-    const [users, setUsers] = React.useState([])
-
-    React.useEffect(() => {
-        const fetchUsers = async () => {
-            const getAllUsers = await fetch(`http://localhost:3001/api/users`);
-            const jsonGetAllUsers = await getAllUsers.json();
-            setUsers(jsonGetAllUsers)
-            console.log(jsonGetAllUsers);
-        };
-
-        fetchUsers();
-    }, []);
 
 
-        console.log(users);
+return (
+        <div>
+            <h1>Let's Connect</h1>
+                <HomeFriendsList/>
+        </div>
 
-    return (
-        <div>{users[1].username}</div>
-    )
+)
 }
 
 export default Home
